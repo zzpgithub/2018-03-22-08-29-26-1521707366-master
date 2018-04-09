@@ -91,7 +91,16 @@ public class Add {
     }
 
     public double getAverageOfEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+       // throw new NotImplementedException();
+        int count = 0;
+        int sum = 0;
+        for (Integer i : arrayList) {
+            if(i % 2 == 0){
+                sum += i;
+                count++;
+            }
+        }
+        return (double)sum/count;
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
