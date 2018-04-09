@@ -92,6 +92,11 @@ public class Add {
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
-        throw new NotImplementedException();
+//        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < arrayList.size() - 1; i++) {
+            result.add((arrayList.get(i) + arrayList.get(i+1)) * 3);
+        }
+        return result;
     }
 }
