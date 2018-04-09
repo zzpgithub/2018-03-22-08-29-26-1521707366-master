@@ -2,6 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Add {
@@ -47,7 +48,16 @@ public class Add {
     }
 
     public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
-        throw new NotImplementedException();
+//        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<Integer>(arrayList.size());
+        for (Integer i : arrayList) {
+            if(i % 2 == 0) {
+                result.add(i);
+            }else {
+                result.add(i * 3 + 2);
+            }
+        }
+        return result;
     }
 
     public int getSumOfProcessedOdds(List<Integer> arrayList) {
