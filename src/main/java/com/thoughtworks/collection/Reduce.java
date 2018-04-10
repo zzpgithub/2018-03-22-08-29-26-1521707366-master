@@ -53,15 +53,33 @@ public class Reduce {
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+        for (Integer integer : arrayList) {
+            if (integer % 2 == 0) {
+                return integer;
+            }
+        }
+        return -1;
     }
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+        for (int i = 0; i < arrayList.size(); i++) {
+            if (arrayList.get(i) % 2 == 0) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        if (this.arrayList.size() != arrayList.size()) {
+            return false;
+        }
+        for (int i = 0; i < arrayList.size(); i++) {
+            if(this.arrayList.get(i) != arrayList.get(i)){
+                return false;
+            }
+        }
+        return true;
     }
 
     //实现接口SingleLink，然后再此函数内使用
@@ -77,10 +95,20 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        for(int i = arrayList.size()-1; i>=0; i--) {
+            if (arrayList.get(i) % 2 == 1) {
+                return arrayList.get(i);
+            }
+        }
+        return -1;
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        for(int i = arrayList.size()-1; i>=0; i--) {
+            if (arrayList.get(i) % 2 == 1) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
