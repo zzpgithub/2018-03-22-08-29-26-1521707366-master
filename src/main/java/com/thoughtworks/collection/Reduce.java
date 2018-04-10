@@ -66,7 +66,14 @@ public class Reduce {
 
     //实现接口SingleLink，然后再此函数内使用
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        for (Integer integer : arrayList) {
+            singleLink.addTailPointer(integer);
+        }
+        if (arrayList.size() % 2 == 0) {
+            return (double) (Integer.parseInt(singleLink.getNode(arrayList.size() / 2).toString()) + Integer.parseInt(singleLink.getNode(arrayList.size() / 2 + 1).toString()))/2;
+        } else {
+            return (double) Integer.parseInt(singleLink.getNode(arrayList.size() / 2).toString());
+        }
     }
 
     public int getLastOdd() {
