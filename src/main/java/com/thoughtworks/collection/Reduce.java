@@ -13,11 +13,23 @@ public class Reduce {
     }
 
     public int getMaximum() {
-        throw new NotImplementedException();
+        int max = arrayList.get(0);
+        for (Integer integer : arrayList) {
+            if (integer > max) {
+                max = integer;
+            }
+        }
+        return max;
     }
 
     public double getMinimum() {
-        throw new NotImplementedException();
+        int min = arrayList.get(0);
+        for (Integer integer : arrayList) {
+            if (integer <  min) {
+                min = integer;
+            }
+        }
+        return min;
     }
 
     public double getAverage() {
