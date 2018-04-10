@@ -113,11 +113,33 @@ public class Add {
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        for (Integer i : arrayList) {
+            if((i % 2 == 0) && (!result.contains(i))){
+                result.add(i);
+            }
+        }
+        return result;
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>();
+        List<Integer> even = new ArrayList<>();
+        List<Integer> odd = new ArrayList<>();
+        for (Integer i : arrayList) {
+            if (i % 2 == 0) {
+                even.add(i);
+            } else {
+                odd.add(i);
+            }
+        }
+        Collections.sort(even);
+        Collections.sort(odd);
+        Collections.reverse(odd);
+        result.addAll(even);
+        result.addAll(odd);
+        return result;
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
