@@ -4,6 +4,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class MyMap {
@@ -46,10 +47,17 @@ public class MyMap {
     }
 
     public List<Integer> sortFromBig() {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>(array);
+//        Collections.sort(result);
+//        Collections.reverse(result);
+        Collections.sort(result,(a,b)-> b.compareTo(a));
+        return result;
     }
 
     public List<Integer> sortFromSmall() {
-        throw new NotImplementedException();
+        List<Integer> result = new ArrayList<>(array);
+        //Collections.reverse(result);
+        Collections.sort(result,(a,b)-> a.compareTo(b));
+        return result;
     }
 }
