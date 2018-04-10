@@ -2,6 +2,8 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Reduce {
@@ -33,11 +35,21 @@ public class Reduce {
     }
 
     public double getAverage() {
-        throw new NotImplementedException();
+        int sum = 0;
+        for (Integer integer : arrayList) {
+            sum += integer;
+        }
+        return (double)sum/arrayList.size();
     }
 
     public double getOrderedMedian() {
-        throw new NotImplementedException();
+        List<Integer> result = arrayList;
+        int size = result.size();
+        if(size % 2 == 0){
+            return (double)(result.get(size/2 - 1) + result.get(size/2))/2;
+        }else {
+            return result.get(size/2);
+        }
     }
 
     public int getFirstEven() {
