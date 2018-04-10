@@ -34,7 +34,15 @@ public class MyMap {
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        List<String> result = new ArrayList<>();
+        for (Integer integer : array) {
+            if ( (integer - 1 )/ letters.length < 1) {
+                result.add(letters[integer - 1]);
+            } else {
+                result.add(letters[(integer - 1) / letters.length - 1] + letters[(integer - 1) % letters.length]);
+            }
+        }
+        return result;
     }
 
     public List<Integer> sortFromBig() {
